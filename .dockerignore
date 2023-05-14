@@ -1,0 +1,14 @@
+node_modules
+.env
+.gitignore
+notes.md
+README.md
+docker-compose*.yml
+Dockerfile*
+.eslintrc.json
+./page/dev
+.dockerignore
+.next
+*.pem
+*.sh
+outsideFunc
