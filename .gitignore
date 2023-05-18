@@ -35,10 +35,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-#misc
-notes.md
-
-# testing page
-emailTest/*
-pages/api/generateHtml.js

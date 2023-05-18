@@ -10,6 +10,7 @@
     "info": "next info"
   },
   "dependencies": {
+    "@next/font": "^13.4.2",
     "dotenv": "^16.0.3",
     "image-size": "^1.0.2",
     "mongodb": "4.13",
