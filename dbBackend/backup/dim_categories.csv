@@ -1,0 +1,50 @@
+id,discretionary,category,sub_category,created_on,updated_on
+1,FALSE,Insurance,Hospitalization Insurance,2022-03-20,2022-06-28
+2,FALSE,Insurance,Term Life Insurance,2022-03-20,2022-06-28
+3,FALSE,Insurance,Term PA Insurance,2022-03-20,2022-06-28
+4,FALSE,Insurance,Early/Regular CI Insurance,2022-03-20,2022-06-28
+42,FALSE,Insurance,Group Term Life Insurance,2022-03-20,2022-06-28
+43,FALSE,Insurance,Group Term PA Insurance,2022-03-20,2022-06-28
+5,FALSE,Recurring Necessities,Telecommunications Bill,2022-03-20,2022-06-28
+6,FALSE,Recurring Necessities,Allowance to Parents,2022-03-20,2022-06-28
+7,FALSE,Recurring Necessities,Monthly Rent,2022-03-20,2022-06-28
+8,FALSE,Recurring Necessities,Daily Groceries,2022-03-20,2022-06-28
+9,FALSE,Recurring Necessities,Daily Toiletries,2022-03-20,2022-06-28
+10,FALSE,Recurring Necessities,Grooming,2022-03-20,2022-06-28
+12,FALSE,Recurring Necessities,Government Taxes,2022-03-20,2022-06-28
+13,FALSE,Recurring Necessities,Personal Finance/Privacy,2022-03-20,2022-06-28
+14,FALSE,Medical,Physical Therapy Session,2022-03-20,2022-06-28
+15,FALSE,Medical,Psychiatrist Consult,2022-03-20,2022-06-28
+16,FALSE,Medical,GP Consult,2022-03-20,2022-06-28
+17,FALSE,Medical,TCM Consult,2022-03-20,2022-06-28
+18,FALSE,Medical,Hospitalization Fees,2022-03-20,2022-06-28
+19,FALSE,Medical,Specialist Consult,2022-03-20,2022-06-28
+20,FALSE,Medical,Regular Check Up,2022-03-20,2022-06-28
+21,FALSE,Medical,Chiropractic Consult,2022-03-20,2022-06-28
+22,FALSE,Medical,Dental Check Up,2022-03-20,2022-06-28
+23,FALSE,Medical,Self Medication,2022-03-20,2022-06-28
+24,FALSE,Education,Post Graduate Education,2022-03-20,2022-06-28
+27,TRUE,Hobbies & Events,Movies,2022-03-20,2022-06-28
+29,TRUE,Travel,Air Tickets,2022-03-20,2022-06-28
+30,TRUE,Travel,Non Flight Transport,2022-03-20,2022-06-28
+31,TRUE,Travel,Accomodation,2022-03-20,2022-06-28
+32,TRUE,Travel,Travel Expenditure,2022-03-20,2022-06-28
+33,TRUE,Travel,Attraction Expenditure,2022-03-20,2022-06-28
+34,TRUE,Travel,Total Trip,2022-03-20,2022-06-28
+48,TRUE,Retail Shopping,Electronics Shopping,2022-06-29,2022-06-29
+36,TRUE,Food Expenditure,Dining Out,2022-03-20,2022-06-28
+37,TRUE,Food Expenditure,Snacks Shopping,2022-03-20,2022-06-28
+47,TRUE,Retail Shopping,Aparallel Shopping,2022-06-29,2022-06-29
+38,TRUE,Retail Shopping,Ecommerce Sales,2022-03-20,2022-06-28
+41,TRUE,Medical,Lasik Operation,2022-05-28,2022-06-28
+40,FALSE,Education,Self Learning,2022-03-20,2022-06-28
+25,TRUE,Retail Shopping,Gift Shopping,2022-03-20,2022-06-28
+44,TRUE,Hobbies & Events,Sports Activities,2022-06-29,2022-06-29
+45,TRUE,Hobbies & Events,Adhoc Events,2022-06-29,2022-06-29
+46,TRUE,Food Expenditure,Alcoholic Drinks,2022-06-29,2022-06-29
+35,FALSE,Recurring Necessities,Daily Meals,2022-03-20,2022-06-28
+11,FALSE,Recurring Necessities,Daily Commute,2022-03-20,2022-06-28
+39,TRUE,Vices & Convenience,Cab,2022-03-20,2022-06-28
+26,TRUE,Vices & Convenience,Gambling,2022-03-20,2022-06-28
+28,TRUE,Vices & Convenience,Vices Except Gambling,2022-03-20,2022-06-28
+49,TRUE,Retail Shopping,Sports Related Items,2022-06-29,2022-06-29

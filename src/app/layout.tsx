@@ -1,5 +1,7 @@
-import { textFont, titleFont } from "./fonts";
+import NavBar from "@/components/layout/NavBar";
+import { textFont, headerFont } from "./fonts";
 import "./globals.scss";
+import classes from "./layout.module.scss";
 
 import { Metadata } from "next";
 export const metadata: Metadata = {
@@ -14,7 +16,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${textFont.variable} ${titleFont.variable}`}>
+      <body className={`${textFont.variable} ${headerFont.variable}`}>
+        <NavBar classes={classes} baseClass="nav" />
         {children}
       </body>
     </html>

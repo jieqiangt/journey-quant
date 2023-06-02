@@ -1,0 +1,2 @@
+id,first_name,last_name,username,acct_type,email,pw_hash,public_key,auth_2fa,created_on,updated_on
+1,Jie Qiang,Tan,jieqiangt,admin,jieqiangt@gmail.com,$2b$12$BqQSBM1qiU15BTqTjWyPHutWzMHCPL2ZMkjl99oMUWhzR1GjDR4G2,my_key,FALSE,2022-03-20,2022-03-20

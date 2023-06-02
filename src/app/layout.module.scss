@@ -1,0 +1,23 @@
+@import "@/sass/variables.scss";
+
+.nav {
+  background-color: transparent;
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  padding: 1rem 12rem;
+
+  &--icon {
+  }
+
+  &--list {
+    display: flex;
+    justify-content: flex-end;
+    gap: 4rem;
+  }
+
+  &--link {
+    font-family: inherit;
+    font-size: inherit;
+    border-bottom: solid black 2px;
+  }
+}

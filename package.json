@@ -2,6 +2,7 @@
   "name": "the-hust-retreat",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev -p 3000",
     "build": "next build",
@@ -10,7 +11,7 @@
     "info": "next info"
   },
   "dependencies": {
-    "@next/font": "^13.4.2",
+    "@planetscale/database": "^1.7.0",
     "dotenv": "^16.0.3",
     "image-size": "^1.0.2",
     "mongodb": "4.13",
@@ -29,6 +30,7 @@
   "devDependencies": {
     "@types/react": "18.2.0",
     "@types/react-dom": "^18.2.1",
+    "csv-parser": "^3.0.0",
     "eslint": "^8.39.0",
     "eslint-config-next": "^13.3.4",
     "typescript": "5.0.4"

@@ -1,0 +1,13 @@
+id,alias,payment_type,card_provider,payment_operator,charged_to,created_on,updated_on
+1,Amex True Cashback,credit_card,amex,amex,1,2022-03-20,2022-03-20
+2,DBS Debit Card,debit_card,visa,dbs,2,2022-03-20,2022-03-20
+3,OCBC Debit Card,debit_card,visa,ocbc,3,2022-03-20,2022-03-20
+4,Grabpay Card,debit_card,mastercard,grab,4,2022-03-20,2022-03-20
+5,Grabpay QR,epayment,,grab,4,2022-03-20,2022-03-20
+6,Shopee Pay,epayment,,shopee,5,2022-03-20,2022-03-20
+7,Google Pay,epayment,,google,3,2022-03-20,2022-03-20
+8,Fave Pay,epayment,,grab,4,2022-03-20,2022-03-20
+9,DBS Paylah,epayment,,dbs,6,2022-03-20,2022-03-20
+10,OCBC PayAnyone,epayment,,ocbc,3,2022-03-20,2022-03-20
+11,Cash,cash,,,7,2022-03-20,2022-03-20
+12,GIRO,epayment,,,3,2022-03-20,2022-03-20

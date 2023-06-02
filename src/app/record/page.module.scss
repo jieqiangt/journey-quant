@@ -1,0 +1,34 @@
+@import "@/sass/variables.scss";
+@import "@/sass/mixins.scss";
+
+.form {
+  &--desc {
+    @include input--text(
+      black,
+      $pos-input-label-x,
+      $pos-input-label-y,
+      $pos-input-label-translate-up
+    );
+  }
+
+  &--amt {
+    @include input--text(
+      black,
+      $pos-input-label-x,
+      $pos-input-label-y,
+      $pos-input-label-translate-up
+    );
+  }
+
+  &--category {
+    @include input--select;
+  }
+
+  &--payment {
+    @include input--select;
+  }
+
+  &--date {
+    @include input--select;
+  }
+}

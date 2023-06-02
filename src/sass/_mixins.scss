@@ -1,0 +1,114 @@
+@mixin make-invisible {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+@mixin make-visible {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
+}
+
+@mixin input--text(
+  $text-color,
+  $pos-input-x,
+  $pos-input-y,
+  $pos-translate-y,
+  $inputType: text
+) {
+  position: relative;
+
+  &--input {
+    display: block;
+    padding: $pos-input-y $pos-input-x;
+    font-family: $font-family-header;
+    font-size: $font-size-text-md;
+    color: $text-color;
+    border-bottom: solid $size-underline-link $text-color;
+    width: 100%;
+    max-width: 100%;
+    resize: none;
+  }
+
+  & textarea {
+    border: solid $size-underline-link $text-color;
+  }
+
+  &--input::placeholder {
+    color: rgba($text-color, 0.8);
+    font-family: $font-family-header;
+  }
+
+  &--label ~ span {
+    font-family: $font-family-header;
+    font-size: $font-size-text-s;
+    color: $col-error;
+    display: inline-block;
+    position: absolute;
+  }
+
+  @if $inputType == "select" {
+    &--label {
+      display: inline-block;
+      position: absolute;
+      bottom: $pos-input-y;
+      left: $pos-input-x;
+      color: $text-color;
+      transform: translateY($pos-translate-y);
+      font-size: $font-size-text-s;
+      font-family: $font-family-header;
+    }
+  } @else {
+    &--label {
+      display: inline-block;
+      position: absolute;
+      bottom: $pos-input-y;
+      left: $pos-input-x;
+      transition: $ani-default;
+      color: $text-color;
+      font-family: $font-family-header;
+      @include make-invisible;
+    }
+  }
+
+  @if $inputType == "textarea" {
+    & :not(textarea:placeholder-shown) + label {
+      transform: translate(
+        -0.4rem,
+        $pos-translate-y + $pos-textarea-label-add-translate-up
+      );
+      font-size: $font-size-text-s;
+      color: $text-color;
+      @include make-visible;
+    }
+  }
+
+  @if $inputType == "text" {
+    & :not(input:placeholder-shown) + label {
+      transform: translateY($pos-translate-y);
+      font-size: $font-size-text-s;
+      color: $text-color;
+      @include make-visible;
+    }
+  }
+}
+
+@mixin input--select {
+  &--select,
+  &--input {
+    background-color: red;
+    font-size: inherit;
+    font-family: inherit;
+    font-size: $font-size-text-lg;
+    font-family: $font-family-header;
+    width: 20rem;
+    color: green;
+  }
+
+  &--label {
+    font-size: $font-size-text-lg;
+    font-family: $font-family-header;
+    margin-right: 0.8rem;
+  }
+}

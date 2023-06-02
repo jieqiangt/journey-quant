@@ -6,7 +6,7 @@ export const textFont = Inter({
     display: 'swap',
 });
 
-export const titleFont = Roboto_Mono({
+export const headerFont = Roboto_Mono({
     subsets: ['latin'],
     variable: '--font-title',
     display: 'swap',

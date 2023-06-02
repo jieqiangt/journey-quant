@@ -1,4 +1,4 @@
-@import "../sass/variables";
+@import "@/sass/variables";
 
 // SETTING FONT SIZE AS 10px
 html {
@@ -20,7 +20,7 @@ html {
 
 body {
   box-sizing: border-box;
-  // background-color: $col-white-primary;
+  background-color: $col-white-primary;
 }
 
 main {
@@ -85,17 +85,19 @@ body:has(main.modal--open) {
   overflow: hidden;
 }
 
-html,
 p,
 span,
 time {
-  font-family: var(--font-text);
+  font-family: $font-family-text;
+  font-size: $font-size-text-lg;
 }
 
 h1,
 h2,
 h3,
 h4,
-h5 {
-  font-family: var(--font-title);
+h5,
+nav {
+  font-family: $font-family-header;
+  font-size: $font-size-header-lg;
 }

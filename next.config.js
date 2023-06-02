@@ -7,6 +7,9 @@ const nextConfig = {
   images: {
     minimumCacheTTL: 180,
   },
+  experimental: {
+    serverActions: true,
+  },
   async headers() {
     return [
       {
@@ -23,4 +26,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;

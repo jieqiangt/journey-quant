@@ -1,0 +1,12 @@
+id,created_on,updated_on,exp_desc,amount,recurring_period,recurring_start,user_id,category_id,is_active,payment_id
+1,2022-05-28,2022-06-28,Aviva Group Term PA Insurance,6,M,2019-04-01,1,43,TRUE,12
+2,2022-05-28,2022-06-28,Aviva CI (May Start),44.33,M,2020-05-01,1,4,TRUE,12
+7,2022-05-28,2022-06-28,Allowance to Parents,500,M,2019-01-01,1,6,TRUE,3
+5,2022-05-28,2022-07-01,Safra Membership (Till 31 July 2025),1.26,M,2021-06-30,1,44,TRUE,4
+0,2022-05-28,2022-07-18,Aviva Group Term Life Insurance,9.62,M,2019-01-01,1,42,TRUE,1
+6,2022-05-28,2022-07-18,Hospitalization Plan (Sept),31.16,M,2019-01-01,1,1,TRUE,1
+9,2022-08-02,2022-08-02,VPN (Aug 2022 - Jul 2024),5,M,2022-08-01,1,13,TRUE,4
+4,2022-05-28,2022-08-28,ViviFi Bill,11,M,2019-01-01,1,5,TRUE,4
+10,2022-08-30,2022-08-30,Camping Tent (Sep 2022 - Aug 2023),22,M,2022-09-01,1,32,TRUE,4
+11,2022-08-30,2022-11-04,Lasik (Sep 2022 - Aug 2032),47.23,M,2022-09-01,1,41,TRUE,4
+12,2023-01-15,2023-01-15,YouTube Premium (Jan 2023 - Dec 2023),3.6,M,2023-01-15,1,13,TRUE,7

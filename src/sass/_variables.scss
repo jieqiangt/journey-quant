@@ -1,1 +1,30 @@
+// font sizes
+
+$font-family-header: var(--font-header);
+$font-family-text: var(--font-text);
+
+$font-size-header-xl: 4.8rem;
+$font-size-header-lg: 3.6rem;
+$font-size-header-md: 3rem;
+$font-size-header-sm: 2.6rem;
+
+$font-size-text-lg: 2.6rem;
+$font-size-text-md: 2.2rem;
+$font-size-text-s: 1.8rem;
+$font-size-text-xs: 1.4rem;
+
+// color
+$col-error: #e91607;
 $col-white-primary: #fff;
+
+// borders & underlines
+$size-underline-link: 0.1rem;
+
+//animation
+$ani-time-link: 0.2s;
+$ani-default: all $ani-time-link ease-out;
+
+//positions
+$pos-input-label-x: 0.4rem;
+$pos-input-label-y: 1.2rem;
+$pos-input-label-translate-up: -2.8rem;
