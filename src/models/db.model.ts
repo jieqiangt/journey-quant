@@ -32,6 +32,7 @@ export interface CategoryInterface extends BaseDBInterface {
     discretionary: boolean;
     category: string;
     sub_category: string;
+    user_id: number;
 }
 
 export interface PaymentInterface extends BaseDBInterface {
@@ -40,16 +41,13 @@ export interface PaymentInterface extends BaseDBInterface {
     card_provider: string;
     payment_operator: string;
     charged_to: number;
+    user_id: number;
 }
 
 export interface ChargingAccountInterface extends BaseDBInterface {
     service_provider: string;
     alias: string;
-}
-
-export interface ChargingAccountInterface extends BaseDBInterface {
-    service_provider: string;
-    alias: string;
+    user_id: number;
 }
 
 export interface UserInterface extends BaseDBInterface {
