@@ -80,7 +80,7 @@ const RecordPage = async () => {
         paymentsSelection={paymentsSelection}
       />
       <Table
-        baseClass="category"
+        baseClass="expenses"
         classes={classes}
         headers={["ID", "Date", "Category", "Description", "Amount"]}
         data={expenses}
