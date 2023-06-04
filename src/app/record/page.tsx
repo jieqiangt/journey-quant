@@ -4,13 +4,15 @@ import { Metadata } from "next";
 import { ExpenseInterface } from "@/models/db.model";
 import { connectDb, executeQuery, readSQLScript } from "@/utils/dbUtils";
 import { ResponseInterface } from "@/models/base.model";
+import { convertDatetoStr, addMonths } from "@/utils/dateUtils";
+import Table from "@/components/table/Table";
 
 export const metadata: Metadata = {
   title: "Journey Quant - Record",
   description: "Journey Quant Record Expense",
 };
 
-const getCategories = async () => {
+const getCategoriesSelection = async () => {
   const conn = await connectDb();
   const query = readSQLScript("./src/sql/query/categories_selection.sql");
   const result = await executeQuery(conn, query, "query");
@@ -19,12 +21,21 @@ const getCategories = async () => {
   return response.rows!;
 };
 
-const getPayments = async () => {
+const getPaymentsSelection = async () => {
   const conn = await connectDb();
   const query = readSQLScript("./src/sql/query/payments_selection.sql");
   const result = await executeQuery(conn, query, "query");
   const response: ResponseInterface = await result.json();
 
+  return response.rows!;
+};
+
+const getExpenses = async (startDate: string) => {
+  const conn = await connectDb();
+  const query = readSQLScript("./src/sql/query/expenses.sql");
+  const params = { startDate: startDate };
+  const result = await executeQuery(conn, query, "query", params);
+  const response: ResponseInterface = await result.json();
   return response.rows!;
 };
 
@@ -51,8 +62,13 @@ const RecordPage = async () => {
     return response;
   }
 
-  const categories = await getCategories();
-  const payments = await getPayments();
+  const categoriesSelection = await getCategoriesSelection();
+  const paymentsSelection = await getPaymentsSelection();
+
+  const startDate = addMonths(new Date(), -3);
+
+  const startDateStr = convertDatetoStr(startDate);
+  const expenses = await getExpenses(startDateStr);
 
   return (
     <main className={classes[""]}>
@@ -60,8 +76,14 @@ const RecordPage = async () => {
         classes={classes}
         baseClass="form"
         insertRecord={insertRecord}
-        categoriesSelection={categories}
-        paymentsSelection={payments}
+        categoriesSelection={categoriesSelection}
+        paymentsSelection={paymentsSelection}
+      />
+      <Table
+        baseClass="category"
+        classes={classes}
+        headers={["ID", "Date", "Category", "Description", "Amount"]}
+        data={expenses}
       />
     </main>
   );
