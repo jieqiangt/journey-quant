@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS dim_payments (
 	card_provider VARCHAR(15),
 	payment_operator VARCHAR(15),
 	charged_to INT,
+	user_id SMALLINT NOT NULL,
 	created_on DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	updated_on DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
