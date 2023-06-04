@@ -14,9 +14,11 @@ const Table: React.FC<TableProps> = (props) => {
     <TableRow key={idx} classes={classes} baseClass={baseClass} row={row} />
   ));
   return (
-    <table>
+    <table className={classes[`${baseClass}--table`]}>
       <TableHead classes={classes} baseClass={baseClass} headers={headers} />
-      <tbody>{tableRows}</tbody>
+      <tbody className={classes[`${baseClass}--table--body`]}>
+        {tableRows}
+      </tbody>
     </table>
   );
 };

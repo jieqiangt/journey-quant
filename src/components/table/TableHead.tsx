@@ -7,11 +7,17 @@ interface TableHeadProps extends ComponentBaseProps {
 const TableHead: React.FC<TableHeadProps> = (props) => {
   const { classes, baseClass, headers } = props;
 
-  const headerCells = headers.map((header) => <th key={header}>{header}</th>);
+  const headerCells = headers.map((header) => (
+    <th className={classes[`${baseClass}--table--cell`]} key={header}>
+      {header}
+    </th>
+  ));
 
   return (
-    <thead>
-      <tr>{headerCells}</tr>
+    <thead className={classes[`${baseClass}--table--head`]}>
+      <tr className={classes[`${baseClass}--table--head--row`]}>
+        {headerCells}
+      </tr>
     </thead>
   );
 };

@@ -9,10 +9,16 @@ const TableRow: React.FC<TableRowProps> = (props) => {
 
   const rowCells = [];
   for (const col in row) {
-    rowCells.push(<td key={col}>{row[col]}</td>);
+    rowCells.push(
+      <td className={classes[`${baseClass}--table--body--cell`]} key={col}>
+        {row[col]}
+      </td>
+    );
   }
 
-  return <tr>{rowCells}</tr>;
+  return (
+    <tr className={classes[`${baseClass}--table--body--row`]}>{rowCells}</tr>
+  );
 };
 
 export default TableRow;
