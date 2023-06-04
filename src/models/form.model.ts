@@ -1,8 +1,7 @@
 import { LegacyRef } from "react";
 import { ComponentBaseProps, ResponseInterface, Row } from "./base.model";
 import { AllDBInterface } from "./db.model";
-
-
+import { ChangeEvent } from "react";
 
 export interface InputTextProps extends ComponentBaseProps {
     name: string;
@@ -18,7 +17,7 @@ export interface InputTextProps extends ComponentBaseProps {
 
 export interface InputSelectOptionInterface {
     name: string;
-    value: string;
+    value: string | number | boolean;
 }
 
 export interface InputSelectOptionProps
@@ -26,23 +25,33 @@ export interface InputSelectOptionProps
     InputSelectOptionInterface {
 }
 
-export interface InputButtonOptionProps extends ComponentBaseProps {
-    type: string;
+export interface InputButtonOptionInterface {
+    type: "radio" | "checkbox";
     name: string;
-    value: string;
-    onChange: () => void;
-    optionBoxClass: string;
-    btnClass: string;
-    labelClass: string;
+    fieldSetName: string;
+    value: string | number | boolean;
     label: string;
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export interface FormProps extends ComponentBaseProps {
+export interface InputButtonOptionProps extends ComponentBaseProps,
+    InputButtonOptionInterface {
+}
+
+export interface InsertFormProps extends ComponentBaseProps {
     insertRecord(record: AllDBInterface): Promise<ResponseInterface>;
+}
+
+export interface RecurExpenseFormProps extends InsertFormProps {
     categoriesSelection: Row[];
     paymentsSelection: Row[];
     recurPeriodsSelection: InputSelectOptionInterface[];
 }
+
+export interface CreatePaymentFormProps extends InsertFormProps {
+    chargingAccountsSelection: Row[];
+}
+
 
 
 
