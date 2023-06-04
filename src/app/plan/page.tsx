@@ -28,6 +28,16 @@ const getPayments = async () => {
   return response.rows!;
 };
 
+const getRecurExpenses = async () => {
+  const conn = await connectDb();
+  const query = readSQLScript("./src/sql/query/recur_expenses.sql");
+  const params = { user_id: "1" };
+  const result = await executeQuery(conn, query, "query", params);
+  const response: ResponseInterface = await result.json();
+
+  return response.rows!;
+};
+
 const RecurExpensePage = async () => {
   async function insertRecord(
     record: RecurExpenseInterface
@@ -57,6 +67,8 @@ const RecurExpensePage = async () => {
     { name: "Monthly", value: "m" },
     { name: "Yearly", value: "y" },
   ];
+
+  const recurExpenses = await getRecurExpenses();
 
   return (
     <main className={classes[""]}>
