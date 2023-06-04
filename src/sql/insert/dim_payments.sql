@@ -5,6 +5,7 @@ INSERT INTO
         `card_provider`,
         `payment_operator`,
         `charged_to`,
+        `user_id`,
         `created_on`,
         `updated_on`
     )
@@ -15,6 +16,7 @@ VALUES
         :card_provider,
         :payment_operator,
         :charged_to,
+        :user_id,
         :created_on,
         :updated_on
     )
