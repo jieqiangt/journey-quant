@@ -1,19 +1,10 @@
 import { InputButtonOptionProps } from "@/models/form.model";
 
 const InputCheckboxOption: React.FC<InputButtonOptionProps> = (props) => {
-  const {
-    type,
-    name,
-    value,
-    onChange,
-    optionBoxClass,
-    btnClass,
-    labelClass,
-    label,
-  } = props;
+  const { classes, baseClass, type, name, value, onChange, label } = props;
 
   return (
-    <div className={optionBoxClass}>
+    <div className={classes[`${baseClass}--${name}--box`]}>
       <input
         type={type}
         id={name}
@@ -21,8 +12,8 @@ const InputCheckboxOption: React.FC<InputButtonOptionProps> = (props) => {
         value={value}
         onChange={onChange}
       />
-      <span className={btnClass}>&nbsp;</span>
-      <label htmlFor={name} className={labelClass}>
+      <span className={classes[`${baseClass}--${name}--btn`]}>&nbsp;</span>
+      <label htmlFor={name} className={classes[`${baseClass}--${name}--label`]}>
         {label}
       </label>
     </div>
