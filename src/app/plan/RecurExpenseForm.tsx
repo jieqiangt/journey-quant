@@ -3,7 +3,7 @@
 import InputText from "@/components/form/InputText";
 import Form from "@/components/form/Form";
 import { Fragment, useRef, FormEvent } from "react";
-import { FormProps } from "@/models/form.model";
+import { RecurExpenseFormProps } from "@/models/form.model";
 import InputSelect from "@/components/form/InputSelect";
 import InputDate from "@/components/form/InputDate";
 import OnClickButton from "@/components/OnClickButton";
@@ -11,7 +11,7 @@ import { RecurExpenseInterface } from "@/models/db.model";
 import { convertDatetoStr } from "@/utils/dateUtils";
 import { useRouter } from "next/navigation";
 
-const RecurExpenseForm: React.FC<FormProps> = (props) => {
+const RecurExpenseForm: React.FC<RecurExpenseFormProps> = (props) => {
   const {
     classes,
     baseClass,
