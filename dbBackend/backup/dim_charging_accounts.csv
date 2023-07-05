@@ -1,8 +1,0 @@
-id,service_provider,alias,created_on,updated_on
-1,amex,AMEX Credit Account,2022-03-20,2022-03-20
-2,dbs,DBS Bank Account,2022-03-20,2022-03-20
-3,ocbc,OCBC Bank Account,2022-03-20,2022-03-20
-4,grab,Grab E-Wallet,2022-03-20,2022-03-20
-5,shopee,Shopee E-Wallet,2022-03-20,2022-03-20
-6,dbs,DBS E-Wallet,2022-03-20,2022-03-20
-7,na,Cash,2022-03-20,2022-03-20
