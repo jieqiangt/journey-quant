@@ -20,7 +20,7 @@ export const readSQLScript = (filePath: string) => {
     return updatedQuery;
 };
 
-export const executeQuery = async (conn: Connection, query: string, params: { [param: string]: string | boolean } | undefined = undefined) => {
+export const executeQuery = async (conn: Connection, query: string, params: { [param: string]: string | boolean | Number | null} | undefined = undefined) => {
     const results = params
         ? await conn.execute(query, params)
         : await conn.execute(query);

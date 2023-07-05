@@ -1,5 +1,6 @@
 INSERT INTO
     trs_recur_expenses (
+        `id`,
         `exp_desc`,
         `amount`,
         `recurring_period`,
@@ -13,6 +14,7 @@ INSERT INTO
     )
 VALUES
     (
+        :id,
         :exp_desc,
         :amount,
         :recurring_period,

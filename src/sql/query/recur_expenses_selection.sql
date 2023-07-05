@@ -1,5 +1,5 @@
 SELECT
     id,
-    sub_category
+    category
  FROM
-    dim_categories;
+    trs_recur_expenses;

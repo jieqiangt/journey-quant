@@ -1,13 +1,15 @@
 SELECT
-    id,
+    recur.id,
     exp_desc,
     amount,
     recurring_period,
     recurring_start,
-    category_id,
-    payment_id
+    cat.category,
+    pay.alias
  FROM
-    trs_recur_expenses
+    trs_recur_expenses recur
+ LEFT JOIN dim_categories cat ON recur.category_id = cat.id
+ LEFT JOIN dim_payments pay ON recur.payment_id = pay.id
  WHERE
-    user_id = :user_id
+    recur.user_id = :user_id
     AND is_active = TRUE;

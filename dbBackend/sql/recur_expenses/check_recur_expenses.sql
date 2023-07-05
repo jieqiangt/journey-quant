@@ -1,8 +1,8 @@
 SELECT
     id
-FROM
+ FROM
     trs_expenses
-WHERE
+ WHERE
     exp_year = :exp_month
     AND exp_month = :exp_year
     AND exp_date IS NULL;

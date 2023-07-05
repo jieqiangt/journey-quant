@@ -12,11 +12,13 @@
   },
   "dependencies": {
     "@planetscale/database": "^1.7.0",
+    "chartist": "^1.3.0",
     "dotenv": "^16.0.3",
     "image-size": "^1.0.2",
     "mongodb": "4.13",
     "next": "^13.0.3",
     "react": "18.2.0",
+    "react-chartist": "^0.14.4",
     "react-dom": "^18.2.0",
     "sass": "^1.56.1",
     "sharp": "^0.32.1",

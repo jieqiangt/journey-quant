@@ -1,5 +1,6 @@
 INSERT INTO
     trs_users (
+        `id`,
         `first_name`,
         `last_name`,
         `username`,
@@ -13,6 +14,7 @@ INSERT INTO
     )
 VALUES
     (
+        :id,
         :first_name,
         :last_name,
         :username,

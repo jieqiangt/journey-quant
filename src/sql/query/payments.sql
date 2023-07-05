@@ -1,9 +1,0 @@
-SELECT
-    id,
-    alias,
-    payment_type,
-    card_provider,
-    payment_operator,
-    charged_to
- FROM
-    dim_payments
