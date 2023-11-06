@@ -12,11 +12,20 @@ interface InputSelectProps extends ComponentBaseProps {
   label: string;
   onChange?: () => void;
   inputRef?: LegacyRef<HTMLSelectElement>;
+  defaultOption?: string;
 }
 
 const InputSelect: React.FC<InputSelectProps> = (props) => {
-  const { classes, baseClass, name, onChange, inputRef, inputOptions, label } =
-    props;
+  const {
+    classes,
+    baseClass,
+    name,
+    onChange,
+    inputRef,
+    inputOptions,
+    label,
+    defaultOption,
+  } = props;
 
   const options = inputOptions.map((option) => (
     <InputSelectOption
@@ -25,6 +34,7 @@ const InputSelect: React.FC<InputSelectProps> = (props) => {
       key={option.name}
       name={option.name}
       value={option.value}
+      defaultOption={defaultOption}
     />
   ));
 

@@ -10,6 +10,14 @@
   visibility: visible !important;
 }
 
+@mixin btn($btn-color, $btn-width) {
+  background-color: $btn-color;
+  border-radius: 5px;
+  height: calc($btn-width / 3);
+  width: $btn-width;
+  font-size: $font-size-text-lg;
+}
+
 @mixin input--text(
   $text-color,
   $pos-input-x,
@@ -21,7 +29,7 @@
 
   &--input {
     display: block;
-    padding: $pos-input-y $pos-input-x;
+    padding: $pos-input-y $pos-input-x 1rem $pos-input-x;
     font-family: $font-family-header;
     font-size: $font-size-text-md;
     color: $text-color;
@@ -38,11 +46,12 @@
   &--input::placeholder {
     color: rgba($text-color, 0.8);
     font-family: $font-family-header;
+    font-size: $font-size-text-lg;
   }
 
-  &--label ~ span {
+  &--label {
     font-family: $font-family-header;
-    font-size: $font-size-text-s;
+    font-size: $font-size-text-lg;
     color: $col-error;
     display: inline-block;
     position: absolute;
@@ -56,7 +65,7 @@
       left: $pos-input-x;
       color: $text-color;
       transform: translateY($pos-translate-y);
-      font-size: $font-size-text-s;
+      font-size: $font-size-text-lg;
       font-family: $font-family-header;
     }
   } @else {
@@ -68,6 +77,7 @@
       transition: $ani-default;
       color: $text-color;
       font-family: $font-family-header;
+      font-size: $font-size-text-lg;
       @include make-invisible;
     }
   }
@@ -78,7 +88,7 @@
         -0.4rem,
         $pos-translate-y + $pos-textarea-label-add-translate-up
       );
-      font-size: $font-size-text-s;
+      font-size: $font-size-text-lg;
       color: $text-color;
       @include make-visible;
     }
@@ -87,7 +97,7 @@
   @if $inputType == "text" {
     & :not(input:placeholder-shown) + label {
       transform: translateY($pos-translate-y);
-      font-size: $font-size-text-s;
+      font-size: $font-size-text-lg;
       color: $text-color;
       @include make-visible;
     }
@@ -95,20 +105,25 @@
 }
 
 @mixin input--select {
+  display: flex;
+  flex-direction: column;
+
   &--select,
   &--input {
-    background-color: red;
+    background-color: transparent;
+    color: inherit;
     font-size: inherit;
     font-family: inherit;
     font-size: $font-size-text-lg;
     font-family: $font-family-header;
-    width: 20rem;
-    color: green;
+    width: min-content;
   }
 
   &--label {
     font-size: $font-size-text-lg;
     font-family: $font-family-header;
+    color: inherit;
+    padding-bottom: 0.2rem;
     margin-right: 0.8rem;
   }
 }

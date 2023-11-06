@@ -3,7 +3,7 @@
 import InputText from "@/components/form/InputText";
 import Form from "@/components/form/Form";
 import { Fragment, useRef, FormEvent } from "react";
-import { FormProps } from "@/models/form.model";
+import { ExpenseFormProps } from "@/models/form.model";
 import InputSelect from "@/components/form/InputSelect";
 import InputDate from "@/components/form/InputDate";
 import OnClickButton from "@/components/OnClickButton";
@@ -11,13 +11,13 @@ import { ExpenseInterface } from "@/models/db.model";
 import { convertDatetoStr } from "@/utils/dateUtils";
 import { useRouter } from "next/navigation";
 
-const ExpenseForm: React.FC<FormProps> = (props) => {
+const ExpenseForm: React.FC<ExpenseFormProps> = (props) => {
   const {
     classes,
     baseClass,
     insertRecord,
     categoriesSelection,
-    paymentsSelection,
+    updateFtTables,
   } = props;
   const router = useRouter();
 
@@ -25,7 +25,6 @@ const ExpenseForm: React.FC<FormProps> = (props) => {
   const descRef = useRef<HTMLInputElement>(null);
   const amtRef = useRef<HTMLInputElement>(null);
   const categoryRef = useRef<HTMLSelectElement>(null);
-  const paymentRef = useRef<HTMLSelectElement>(null);
 
   const submitHandler = async (event: FormEvent) => {
     event.preventDefault();
@@ -38,7 +37,6 @@ const ExpenseForm: React.FC<FormProps> = (props) => {
       exp_desc: descRef.current?.value!,
       amount: +amtRef.current?.value!,
       category_id: +categoryRef.current?.value!,
-      payment_id: +paymentRef.current?.value!,
       exp_month: dateRef.current?.value!
         ? +dateRef.current?.value!.split("-")[1]
         : null,
@@ -56,8 +54,10 @@ const ExpenseForm: React.FC<FormProps> = (props) => {
     const response = await insertRecord(expense);
 
     if (response.status === 200) {
+      updateFtTables(expense);
+
       if (dateRef.current) {
-        dateRef.current.value = "";
+        dateRef.current.value = todayStr;
       }
       if (descRef.current) {
         descRef.current.value = "";
@@ -65,23 +65,12 @@ const ExpenseForm: React.FC<FormProps> = (props) => {
       if (amtRef.current) {
         amtRef.current.value = "";
       }
-      if (categoryRef.current) {
-        categoryRef.current.value = "";
-      }
-      if (paymentRef.current) {
-        paymentRef.current.value = "";
-      }
       router.refresh();
     }
   };
 
   const categoriesOptions = categoriesSelection.map((option) => ({
-    name: option.sub_category,
-    value: option.id,
-  }));
-
-  const paymentOptions = paymentsSelection.map((option) => ({
-    name: option.alias,
+    name: option.category,
     value: option.id,
   }));
 
@@ -124,14 +113,6 @@ const ExpenseForm: React.FC<FormProps> = (props) => {
         inputRef={categoryRef}
         inputOptions={categoriesOptions}
       />
-      <InputSelect
-        baseClass={baseClass}
-        classes={classes}
-        name="payment"
-        label="Payment Mode"
-        inputRef={paymentRef}
-        inputOptions={paymentOptions}
-      />
       <OnClickButton
         onClick={submitHandler}
         classes={classes}
@@ -144,12 +125,7 @@ const ExpenseForm: React.FC<FormProps> = (props) => {
   );
 
   return (
-    <Form
-      baseClass={baseClass}
-      formClass="form"
-      classes={classes}
-      formFields={formFields}
-    />
+    <Form baseClass={baseClass} classes={classes} formFields={formFields} />
   );
 };
 

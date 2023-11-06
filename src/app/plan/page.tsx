@@ -4,6 +4,7 @@ import { ResponseInterface } from "@/models/base.model";
 import classes from "./page.module.scss";
 import { Metadata } from "next";
 import { connectDb, readSQLScript, executeQuery } from "@/utils/dbUtils";
+import Table from "@/components/table/Table";
 
 export const metadata: Metadata = {
   title: "Journey Quant - Plan",
@@ -13,15 +14,6 @@ export const metadata: Metadata = {
 const getCategories = async () => {
   const conn = await connectDb();
   const query = readSQLScript("./src/sql/query/categories_selection.sql");
-  const result = await executeQuery(conn, query, "query");
-  const response: ResponseInterface = await result.json();
-
-  return response.rows!;
-};
-
-const getPayments = async () => {
-  const conn = await connectDb();
-  const query = readSQLScript("./src/sql/query/payments_selection.sql");
   const result = await executeQuery(conn, query, "query");
   const response: ResponseInterface = await result.json();
 
@@ -62,7 +54,6 @@ const RecurExpensePage = async () => {
   }
 
   const categories = await getCategories();
-  const payments = await getPayments();
   const recurPeriods = [
     { name: "Monthly", value: "m" },
     { name: "Yearly", value: "y" },
@@ -71,14 +62,27 @@ const RecurExpensePage = async () => {
   const recurExpenses = await getRecurExpenses();
 
   return (
-    <main className={classes[""]}>
+    <main className={classes["main"]}>
       <RecurExpenseForm
         classes={classes}
         baseClass="form"
         insertRecord={insertRecord}
         categoriesSelection={categories}
-        paymentsSelection={payments}
         recurPeriodsSelection={recurPeriods}
+      />
+      <Table
+        baseClass="recur"
+        classes={classes}
+        headers={[
+          "ID",
+          "Description",
+          "Amount",
+          "Period",
+          "Start Date",
+          "Category",
+          "Payment",
+        ]}
+        data={recurExpenses}
       />
     </main>
   );

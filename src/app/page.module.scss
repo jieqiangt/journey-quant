@@ -1,0 +1,40 @@
+.dashboard {
+  width: 100vw;
+  height: 120vh;
+  display: grid;
+  grid-template-columns: repeat(10, 10vw);
+  grid-template-rows: repeat(10, 12vh);
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin-top: 5vh;
+}
+
+.gauge {
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / 4;
+  grid-row: 1 / 5;
+}
+
+.pie {
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / 4;
+  grid-row: 5 / 10;
+}
+
+.bar {
+  width: 100%;
+  height: 100%;
+  grid-column: 4 / 10;
+  grid-row: 5 / 10;
+}
+
+
+.area {
+  width: 100%;
+  height: 100%;
+  grid-column: 4 / 10;
+  grid-row: 1 / 5;
+}
+

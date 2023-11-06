@@ -10,7 +10,6 @@ INSERT INTO
         `category_id`,
         `recurring_start`,
         `user_id`,
-        `payment_id`,
         `created_on`,
         `updated_on`
     )
@@ -26,7 +25,6 @@ VALUES
         :category_id,
         :recurring_start,
         :user_id,
-        :payment_id,
         :created_on,
         :updated_on
     )

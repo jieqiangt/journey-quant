@@ -8,7 +8,7 @@ const TableHead: React.FC<TableHeadProps> = (props) => {
   const { classes, baseClass, headers } = props;
 
   const headerCells = headers.map((header) => (
-    <th className={classes[`${baseClass}--table--cell`]} key={header}>
+    <th className={classes[`${baseClass}--table--head--cell`]} key={header}>
       {header}
     </th>
   ));

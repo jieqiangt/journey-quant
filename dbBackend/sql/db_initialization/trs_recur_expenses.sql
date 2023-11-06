@@ -9,5 +9,6 @@ CREATE TABLE IF NOT EXISTS trs_recur_expenses (
 	user_id SMALLINT NOT NULL,
 	category_id SMALLINT NOT NULL,
 	is_active BOOLEAN NOT NULL,
-	payment_id SMALLINT NOT NULL
+	payment_id SMALLINT NOT NULL,
+	PRIMARY KEY (id)
 );

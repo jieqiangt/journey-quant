@@ -19,8 +19,8 @@ export const addMonths = (date: Date, months: number) => {
   const curMonth = newDate.getMonth() + 1
   const posNeg = months > 0 ? 1 : -1;
   const monthsLeft = Math.abs(months) % 12
+  
   let yearsToAdd = Math.floor(Math.abs(months) / 12)
-
   let newMonth = curMonth + posNeg * monthsLeft
 
   if (newMonth <= 0) {

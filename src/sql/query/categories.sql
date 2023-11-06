@@ -1,6 +1,5 @@
 SELECT
     id,
-    sub_category,
     category,
     discretionary
  FROM

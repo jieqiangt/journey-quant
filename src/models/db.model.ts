@@ -8,7 +8,7 @@ export interface ExpenseInterface extends BaseDBInterface {
     amount: number;
     category_id: number;
     user_id: number;
-    exp_date: string | null;
+    exp_date: string;
     exp_month: number | null;
     exp_year: number | null;
     recurring: boolean;

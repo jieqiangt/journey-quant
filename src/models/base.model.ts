@@ -5,7 +5,6 @@ export interface ComponentBaseProps {
     baseClass: string;
 }
 
-
 export interface ResponseInterface {
     title: string;
     status: number;
@@ -14,3 +13,5 @@ export interface ResponseInterface {
     className?: string;
     rows?: Row[];
 }
+
+export type ColumnObject = { [colName: string]: string | number | boolean | undefined }

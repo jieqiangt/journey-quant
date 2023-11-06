@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS dim_dates (
+    id INT AUTO_INCREMENT,
+    date DATETIME NOT NULL,
+    day TINYINT NOT NULL,
+    month TINYINT NOT NULL,
+    year SMALLINT NOT NULL,
+    PRIMARY KEY (id)
+);

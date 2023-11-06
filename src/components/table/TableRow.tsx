@@ -1,7 +1,7 @@
 import { ComponentBaseProps } from "@/models/base.model";
 
 interface TableRowProps extends ComponentBaseProps {
-  row: { [col: string]: string | boolean | number | undefined };
+  row: { [col: string]: string | boolean | number | JSX.Element | undefined };
 }
 
 const TableRow: React.FC<TableRowProps> = (props) => {

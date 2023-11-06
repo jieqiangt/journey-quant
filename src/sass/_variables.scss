@@ -15,7 +15,13 @@ $font-size-text-xs: 1.4rem;
 
 // color
 $col-error: #e91607;
-$col-white-primary: #fff;
+$col-white: #f5eeee;
+
+$col-primary: #990000;
+
+$col-accent: #d6bf8a;
+
+$col-gray: #544b4b;
 
 // borders & underlines
 $size-underline-link: 0.1rem;
@@ -26,5 +32,7 @@ $ani-default: all $ani-time-link ease-out;
 
 //positions
 $pos-input-label-x: 0.4rem;
-$pos-input-label-y: 1.2rem;
-$pos-input-label-translate-up: -2.8rem;
+$pos-input-label-y: 2.4rem;
+$pos-input-label-translate-up: -1.2rem;
+
+$page-x-margin: 5vw;

@@ -17,7 +17,6 @@ const RecurExpenseForm: React.FC<RecurExpenseFormProps> = (props) => {
     baseClass,
     insertRecord,
     categoriesSelection,
-    paymentsSelection,
     recurPeriodsSelection,
   } = props;
   const router = useRouter();
@@ -39,7 +38,6 @@ const RecurExpenseForm: React.FC<RecurExpenseFormProps> = (props) => {
       exp_desc: descRef.current?.value!,
       amount: +amtRef.current?.value!,
       category_id: +categoryRef.current?.value!,
-      payment_id: +paymentRef.current?.value!,
       recurring_period: recurPeriodRef.current?.value!,
       recurring_start: recurStartRef.current?.value!,
       user_id: 1,
@@ -78,11 +76,6 @@ const RecurExpenseForm: React.FC<RecurExpenseFormProps> = (props) => {
     value: option.id,
   }));
 
-  const paymentOptions = paymentsSelection.map((option) => ({
-    name: option.alias,
-    value: option.id,
-  }));
-
   const formFields = (
     <Fragment>
       <InputText
@@ -110,14 +103,14 @@ const RecurExpenseForm: React.FC<RecurExpenseFormProps> = (props) => {
       <InputDate
         baseClass={baseClass}
         classes={classes}
-        name="start"
+        name="start-date"
         label="Start Date"
         inputRef={recurStartRef}
       />
       <InputSelect
         baseClass={baseClass}
         classes={classes}
-        name="recurPeriod"
+        name="recur-period"
         label="Recurring Period"
         inputRef={recurPeriodRef}
         inputOptions={recurPeriodsSelection}
@@ -129,14 +122,6 @@ const RecurExpenseForm: React.FC<RecurExpenseFormProps> = (props) => {
         label="Category"
         inputRef={categoryRef}
         inputOptions={categoriesOptions}
-      />
-      <InputSelect
-        baseClass={baseClass}
-        classes={classes}
-        name="payment"
-        label="Payment Mode"
-        inputRef={paymentRef}
-        inputOptions={paymentOptions}
       />
       <OnClickButton
         onClick={submitHandler}
@@ -150,12 +135,7 @@ const RecurExpenseForm: React.FC<RecurExpenseFormProps> = (props) => {
   );
 
   return (
-    <Form
-      baseClass={baseClass}
-      formClass="form"
-      classes={classes}
-      formFields={formFields}
-    />
+    <Form baseClass={baseClass} classes={classes} formFields={formFields} />
   );
 };
 

@@ -18,7 +18,6 @@ const CreateCategoryForm: React.FC<InsertFormProps> = (props) => {
     undefined
   );
   const categoryRef = useRef<HTMLInputElement>(null);
-  const subCategoryRef = useRef<HTMLInputElement>(null);
 
   const radioHandler = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.value == "true") {
@@ -36,7 +35,6 @@ const CreateCategoryForm: React.FC<InsertFormProps> = (props) => {
     const category: CategoryInterface = {
       discretionary: discretionary!,
       category: categoryRef.current?.value!,
-      sub_category: subCategoryRef.current?.value!,
       user_id: 1,
       created_on: todayStr,
       updated_on: todayStr,
@@ -48,10 +46,8 @@ const CreateCategoryForm: React.FC<InsertFormProps> = (props) => {
       if (categoryRef.current) {
         categoryRef.current.value = "";
       }
-      if (subCategoryRef.current) {
-        subCategoryRef.current.value = "";
-      }
-
+      // set discretionary back to true
+      setDiscretionary(() => true)
       router.refresh();
     }
   };
@@ -92,17 +88,6 @@ const CreateCategoryForm: React.FC<InsertFormProps> = (props) => {
         invalidText=""
         inputRef={categoryRef}
       />
-      <InputText
-        baseClass={baseClass}
-        classes={classes}
-        type="text"
-        name="subCategory"
-        placeholder="Sub Category"
-        label="Sub Category"
-        valid={true}
-        invalidText=""
-        inputRef={subCategoryRef}
-      />
       <InputButton
         baseClass={baseClass}
         classes={classes}
@@ -121,12 +106,7 @@ const CreateCategoryForm: React.FC<InsertFormProps> = (props) => {
     </Fragment>
   );
   return (
-    <Form
-      baseClass={baseClass}
-      formClass="form"
-      classes={classes}
-      formFields={formFields}
-    />
+    <Form baseClass={baseClass} classes={classes} formFields={formFields} />
   );
 };
 

@@ -7,10 +7,11 @@ interface InputDateProps extends ComponentBaseProps {
   name: string;
   onChange?: () => void;
   inputRef?: LegacyRef<HTMLInputElement>;
+  defaultValue?: string;
 }
 
 const InputDate: React.FC<InputDateProps> = (props) => {
-  const { classes, baseClass, label, name, inputRef } = props;
+  const { classes, baseClass, label, name, inputRef, defaultValue } = props;
 
   const today = new Date();
 
@@ -28,7 +29,7 @@ const InputDate: React.FC<InputDateProps> = (props) => {
         type="date"
         id={name}
         name={name}
-        defaultValue={todayStr}
+        defaultValue={defaultValue ? defaultValue : todayStr}
         min={minDateStr}
         max={maxDateStr}
         ref={inputRef}

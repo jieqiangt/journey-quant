@@ -12,6 +12,7 @@ const InputText: React.FC<InputTextProps> = (props) => {
     invalidText,
     inputRef,
     value,
+    defaultValue,
     onChange,
   } = props;
 
@@ -26,6 +27,7 @@ const InputText: React.FC<InputTextProps> = (props) => {
         onChange={onChange}
         placeholder={placeholder}
         ref={inputRef}
+        defaultValue={defaultValue}
       />
       <label htmlFor={name} className={classes[`${baseClass}--${name}--label`]}>
         {label}
