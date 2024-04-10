@@ -33,11 +33,8 @@ const ExpenseForm: React.FC<ExpenseFormProps> = (props) => {
     const todayStr = convertDatetoStr(today);
 
     const exp_date: string = dateRef.current?.value!
-    console.log(exp_date)
     const exp_month: number = +exp_date.split('-')[1]
-    console.log(exp_month)
     const exp_year: number = +exp_date.split('-')[0]
-    console.log(exp_year)
 
     const expense: ExpenseInterface = {
       exp_date: exp_date,
